@@ -30,4 +30,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>KanalJaeger.net</title>
+export const Head: HeadFC = () => <title>Kanaljaeger.net</title>
