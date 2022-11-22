@@ -1,0 +1,147 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+
+    .navigation {
+        --nav-border-size: 4px;
+
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: var(--nav-border-size) solid rgba(0, 0, 0, .30);
+        z-index: 1000;
+        background-color: var(--color-background);
+
+        transition: background-color .25s, backdrop-filter .25s;
+
+        @supports(backdrop-filter: blur(20px)) {
+            background-color: var(--color-background-glassy);
+            backdrop-filter: blur(20px);
+        }
+
+        &.mayDoTransparency {
+            position: fixed;
+        }
+
+        &.transparent {
+            background-color: transparent;
+            backdrop-filter: none;
+        }
+
+        > nav {
+            display: flex;
+            max-width: var(--layout-width);
+            margin: 0 auto;
+            z-index: 1001;
+
+            > a, .navLink {
+                padding: var(--layout-padding);
+                color: inherit;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+            }
+
+            > .logo {
+                display: flex;
+
+                flex-direction: column;
+                align-items: unset;
+
+                padding: 0;
+
+                font-size: 1.5em;
+                font-weight: 600;
+                margin-right: auto;
+
+                --logo-draw-color: #969696;
+
+                /*background:
+                radial-gradient(ellipse at center, transparent, var(--color-background) 75%),
+                conic-gradient(
+                    from 45deg at center,
+                    var(--logo-draw-color) 0deg 2deg,  transparent 2deg 45deg,
+                ),
+                conic-gradient(
+                    from -45deg at center,
+                    var(--logo-draw-color) 0deg 2deg,  transparent 2deg 45deg,
+                ),
+                conic-gradient(
+                    from 65deg at center,
+                    var(--logo-draw-color) 0deg 2deg,  transparent 2deg 45deg,
+                ),
+                conic-gradient(
+                    from -65deg at center,
+                    var(--logo-draw-color) 0deg 2deg,  transparent 2deg 45deg,
+                ),
+                conic-gradient(
+                    from 135deg at center,
+                    var(--logo-draw-color) 0deg 2deg,  transparent 2deg 45deg,
+                ),
+                conic-gradient(
+                    from 225deg at center,
+                    var(--logo-draw-color) 0deg 2deg,  transparent 2deg 45deg,
+                ),
+                conic-gradient(
+                    from 245deg at center,
+                    var(--logo-draw-color) 0deg 2deg,  transparent 2deg 45deg,
+                ),
+                conic-gradient(
+                    from 115deg at center,
+                    var(--logo-draw-color) 0deg 2deg,  transparent 2deg 45deg,
+                ),
+                linear-gradient(to bottom, transparent 0px 10px, var(--logo-draw-color) 10px 11px, transparent 11px 20px),
+                linear-gradient(to bottom, transparent 0px 20px, var(--logo-draw-color) 20px 21px, transparent 21px 30px),
+                linear-gradient(to bottom, transparent 0px 27px, var(--logo-draw-color) 27px 28px, transparent 28px 30px),
+                linear-gradient(to top, transparent 0px 10px, var(--logo-draw-color) 10px 11px, transparent 11px 20px),
+                linear-gradient(to top, transparent 0px 20px, var(--logo-draw-color) 20px 21px, transparent 21px 30px),
+                linear-gradient(to top, transparent 0px 27px, var(--logo-draw-color) 27px 28px, transparent 28px 30px);*/
+
+                > .border {
+                    display: flex;
+                    
+                    > * {
+                        flex-grow: 1;
+                        background-color: var(--logo-b-color);
+                        box-shadow: 0 0 10px var(--logo-b-color);
+                    }
+
+                    > :nth-child(1) {
+                        --logo-b-color: red;
+                    }
+                    > :nth-child(2) {
+                        --logo-b-color: orange;
+                    }
+                    > :nth-child(3) {
+                        --logo-b-color: yellow;
+                    }
+                    > :nth-child(4) {
+                        --logo-b-color: green;
+                    }
+                    > :nth-child(5) {
+                        --logo-b-color: blue;
+                    }
+
+                    height: var(--nav-border-size);
+                    flex-shrink: 0;
+                    flex-grow: 0;
+                    margin-bottom: calc(0px - var(--nav-border-size));
+                }
+            }
+        }
+    }
+
+    [role=main] {
+        flex-grow: 1;
+    }
+
+    footer {
+        padding: var(--layout-padding);
+        text-align: center;
+    }
+}

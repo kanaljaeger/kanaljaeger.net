@@ -1,0 +1,28 @@
+@use "@fontsource/work-sans/scss/mixins" as WorkSans;
+@import "./globals";
+
+@include WorkSans.fontFaceVariable($type: "wghtOnly");
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    @include vars;
+}
+
+html, body, #___gatsby, #gatsby-focus-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Work SansVariable', 'Work Sans', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline dotted currentColor;
+}

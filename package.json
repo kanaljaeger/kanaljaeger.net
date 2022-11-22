@@ -1,8 +1,8 @@
 {
-  "name": "kanalj-ger.net",
+  "name": "kanaljaeger.net",
   "version": "1.0.0",
   "private": true,
-  "description": "kanalj-ger.net",
+  "description": "kanaljaeger.net",
   "author": "Kevin Kandlbinder",
   "keywords": [
     "gatsby"
@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource/work-sans": "^4.5.12",
     "@mdx-js/react": "^2.1.5",
     "gatsby": "^5.0.0",
     "gatsby-plugin-image": "^3.1.0",

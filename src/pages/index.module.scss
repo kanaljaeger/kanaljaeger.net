@@ -1,0 +1,112 @@
+.hero { 
+    background: linear-gradient(129.96deg, #FF2F2F 10.43%, #000460 92.78%), radial-gradient(100% 246.94% at 100% 0%, #FFFFFF 0%, #020063 100%), linear-gradient(58.72deg, #2200F2 0%, #530000 100%), linear-gradient(154.03deg, #B70000 0%, #FF003D 74.04%), linear-gradient(341.1deg, #FF0000 7.52%, #0038FF 77.98%), linear-gradient(136.23deg, #00C2FF 11.12%, #FF0000 86.47%), radial-gradient(57.37% 100% at 50% 0%, #B50000 0%, #0034BB 100%);
+    background-blend-mode: overlay, color-burn, screen, overlay, difference, difference, normal;
+    
+    width: 100%;
+    height: 100vh;
+
+    .heroInner {
+        position: relative;
+        top: 20px;
+        left: 20px;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        overflow: hidden;
+        
+        .name, .nameShadow {
+          background-position: center;
+          background-size: cover;
+          filter: contrast(.82);
+          position: absolute;
+        }
+        
+        .textContainer {
+          z-index: 1;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          
+          .name, .nameShadow {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 50px;
+            
+            > .nameText {
+              color: transparent;
+              display: inline-block;
+              font-size: 16vw;
+              transform: skewY(-10deg);
+              font-weight: 700;
+            }
+            
+            .preName, .postName {
+              position: absolute;
+              font-weight: 900;
+              font-size: 1.6vw;
+              transform: rotate(-10deg);
+              --shadow-color: #0d0d0d;
+            }
+            
+            .preName {
+              color: #ffb861;
+              top: 37%;
+              left: 3%;
+            }
+            .postName {
+              color: #ff6961;
+              bottom: 23%;
+              right: 2%;
+            }
+            
+            @media(max-width: 576px) {
+              .preName {
+                color: #ffb861;
+                top: 37%;
+                left: 20%;
+              }
+              .postName {
+                color: #ff6961;
+                bottom: 23%;
+                right: 20%;
+              }
+            }
+          }
+          
+          .nameShadow {
+            > .nameText {
+              text-shadow: 1px 1px 0 white, 
+                           2px 2px 0 white, 
+                           3px 3px 0 white, 
+                           4px 4px 0 white, 
+                           5px 5px 0 white, 
+                           6px 6px 0 white, 
+                           7px 7px 0 white, 
+                           8px 8px 0 white, 
+                           9px 9px 0 white, 
+                           10px 10px 0 white;
+            }
+            
+            .preName, .postName {
+              -webkit-text-stroke-width: .4vw;
+              -webkit-text-stroke-color: var(--shadow-color);
+            }
+          }
+          
+          .nameText {
+            //background-image: url(https://images.unsplash.com/photo-1535498730771-e735b998cd64?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzMTg5MzgzOA&ixlib=rb-1.2.1&q=85);
+            background: linear-gradient(123deg, #FFFFFF 0%, #00B2FF 100%), linear-gradient(236deg, #BAFF99 0%, #005E64 100%), linear-gradient(180deg, #FFFFFF 0%, #002A5A 100%), linear-gradient(225deg, #0094FF 20%, #BFF4ED 45%, #280F34 45%, #280F34 70%, #FF004E 70%, #E41655 85%, #B30753 85%, #B30753 100%), linear-gradient(135deg, #0E0220 15%, #0E0220 35%, #E40475 35%, #E40475 60%, #48E0E4 60%, #48E0E4 68%, #D7FBF6 68%, #D7FBF6 100%);
+            background-blend-mode: overlay, overlay, overlay, darken, normal;
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-position: center;
+            background-size: cover;
+          }
+        }
+      }
+}
